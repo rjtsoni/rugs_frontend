@@ -1,0 +1,91 @@
+/* Small-screen finishing rules for the storefront's shared layouts. */
+@media (max-width: 1200px) {
+  /* Give the offer and utility actions their own rows before they collide. */
+  .reference-utility-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    grid-template-rows: auto auto;
+    gap: 6px 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .reference-company-name { grid-column: 1; grid-row: 1; }
+  .reference-offer-inline { grid-column: 2; grid-row: 1; justify-self: end; }
+  .reference-utility-actions {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: end;
+    gap: clamp(16px, 3vw, 34px);
+  }
+  .hero h1 { font-size: clamp(52px, 5.6vw, 66px); letter-spacing: -2.5px; }
+}
+
+@media (max-width: 800px) {
+  .reference-utility-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    gap: 5px 10px;
+  }
+  .reference-company-name { grid-column: 1; grid-row: 1; }
+  .reference-utility-actions { grid-column: 2; grid-row: 1; gap: 12px; }
+  .reference-offer-inline { grid-column: 1 / -1; grid-row: 2; justify-self: center; }
+  .reference-category-row {
+    justify-content: flex-start;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .reference-category-row::-webkit-scrollbar { display: none; }
+  .reference-category-row > button { flex: 0 0 auto; }
+  .reference-offer-inline { min-width: 0; }
+  .reference-offer-inline .offer-message { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .reference-company-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+}
+
+@media (max-width: 700px) {
+  html, body, #root { max-width: 100%; }
+  body { overflow-x: hidden; }
+  .reference-top-row, .reference-utility-row, .reference-category-row,
+  .detail-layout, .checkout-layout, .newsletter, .footer-main { min-width: 0; }
+  .hero-content { order: 0; }
+  .hero-visual { order: 1; }
+  .reference-brand { min-width: 0; }
+  .reference-brand img { max-width: min(122px, 32vw); }
+  .reference-utility-actions { min-width: 0; }
+  .reference-utility-row > * { min-width: 0; }
+  .reference-offer-inline .offer-message { max-width: 36vw; }
+  .store-page { width: 100%; }
+  .detail-copy, .detail-art, .checkout-form, .checkout-summary { min-width: 0; }
+  .detail-copy h1, .store-page-heading h1 { overflow-wrap: anywhere; }
+  .checkout-two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .newsletter form, .newsletter .email-field { width: 100%; min-width: 0; }
+  .newsletter .email-field input { min-width: 0; }
+  .footer-main > div { min-width: 0; }
+  .footer-main > div > a:not(.logo), .footer-main > div > button { overflow-wrap: anywhere; }
+  .newsletter-success-backdrop { padding: 12px; }
+  .newsletter-success { max-height: calc(100dvh - 24px); overflow-y: auto; }
+}
+
+@media (max-width: 430px) {
+  .reference-top-row { grid-template-columns: minmax(0, 1fr) 40px 36px; gap: 9px; }
+  .reference-utility-row { grid-template-columns: minmax(0, 1fr) auto; gap: 6px; }
+  .reference-utility-row .reference-offer-inline { grid-column: 1 / -1; grid-row: 2; justify-content: center; }
+  .reference-utility-row .reference-company-name { grid-column: 1; grid-row: 1; max-width: 62vw; white-space: nowrap; }
+  .reference-utility-row .reference-utility-actions { grid-column: 2; grid-row: 1; }
+  .reference-offer-inline .offer-message { max-width: 52vw; }
+  .reference-utility-actions button:nth-child(2) span { max-width: 76px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 9px; }
+  .reference-utility-actions button:nth-child(2) svg { display: none; }
+  .reference-category-row { gap: 17px; }
+  .footer-main { gap: 28px 16px; }
+  .footer-bottom { align-items: flex-start; }
+  .sizes { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 12px; }
+  .sizes button { min-width: 0; }
+  .sizes small { max-width: 145px; margin-inline: auto; font-size: 9px; }
+  .sizes .size-drawing { height: 110px; }
+}
+
+@media (max-width: 1000px) and (min-width: 801px) {
+  .hero { height: 610px; }
+  .hero-content { width: 57%; padding-top: 76px; padding-left: 5%; }
+  .hero h1 { font-size: clamp(48px, 5.4vw, 58px); line-height: 1.08; }
+  .hero-visual { right: 4%; width: 39%; top: 45px; bottom: 60px; }
+}
