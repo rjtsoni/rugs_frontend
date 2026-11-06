@@ -1,5 +1,6 @@
-const storefrontBase = import.meta.env.VITE_API_URL || '';
-const customerBase = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+const renderApiBase = 'https://rug-backend.onrender.com';
+const storefrontBase = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? '' : renderApiBase);
+const customerBase = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:4000' : renderApiBase);
 
 export async function getStorefront() {
   const response = await fetch(`${storefrontBase}/api/storefront`, { cache: 'no-store' });
