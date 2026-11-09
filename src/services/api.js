@@ -26,6 +26,34 @@ export async function subscribeNewsletter(email) {
   return data;
 }
 
+export async function submitContactMessage(message) {
+  const response = await fetch(`${storefrontBase}/api/storefront/contact`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(message)
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.error || 'Could not send your message. Please try again.');
+  return data;
+}
+
+export async function getProductReviews(productId, { page = 1, limit = 10 } = {}) {
+  const params = new URLSearchParams({ page: String(page), limit: String(limit) });
+  const response = await fetch(`${storefrontBase}/api/storefront/products/${encodeURIComponent(productId)}/reviews?${params}`, { cache: 'no-store' });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.error || 'Could not load product reviews.');
+  return data;
+}
+
+export async function submitProductReview(productId, review) {
+  const response = await fetch(`${storefrontBase}/api/storefront/products/${encodeURIComponent(productId)}/reviews`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(review)
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.error || 'Could not submit your review.');
+  return data;
+}
+
 export function customerApi(path, options = {}) {
   return fetch(`${customerBase}${path}`, {
     ...options,

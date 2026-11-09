@@ -2,7 +2,7 @@ import { t } from '../i18n';
 import React, { useEffect, useState } from 'react';
 import { Search, Heart, ShoppingBag, Menu, UserRound, ChevronDown, ArrowUpRight, X } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
-export default function Header({ onCollection, onPanel, onAccount, onProfile, onLogout, customer, count, savedCount, onSearch, onHome, categories = [], pages = [], brand = {}, offers = [] }) {
+export default function Header({ onCollection, onPanel, onAccount, onProfile, onLogout, customer, count, savedCount, onSearch, onHome, onContact, categories = [], pages = [], brand = {}, offers = [] }) {
   const [openCategory, setOpenCategory] = useState(null);
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);
   const [offerIndex, setOfferIndex] = useState(0);
@@ -32,6 +32,7 @@ export default function Header({ onCollection, onPanel, onAccount, onProfile, on
       <button className="reference-search" onClick={onSearch}><span>{t('Search for products...')}</span><Search size={20} /></button>
       <nav className="reference-page-links" aria-label={t('Main navigation')}>
         <button onClick={onHome}>{t('Home')}</button>
+        <button onClick={onContact}>{t('Contact Us')}</button>
       </nav>
       <LanguageSelector compact />
       <button className="reference-mobile-toggle" aria-label={t('Open navigation')} onClick={() => onPanel('menu')}><Menu size={20} /></button>
