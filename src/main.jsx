@@ -313,6 +313,40 @@ function App() {
   }, [isCollection, page, limit, keyword, category]);
   const productSegment = decodeURIComponent(routeUrl.pathname.split('/')[2] || '');
   const detailProduct = storeProducts.find(p => String(p.id) === productSegment.split('-')[0] || p.slug === productSegment.replace(/^\d+-/, ''));
+  useEffect(() => {
+    const pageBrand = brand.companyName || brand.logoText || 'Aara Rugs';
+    const pageTitle = isProductReviewsPage && detailProduct
+      ? `Reviews for ${detailProduct.name} | ${pageBrand}`
+      : isProduct && detailProduct
+        ? `${detailProduct.name} | Handcrafted Rugs | ${pageBrand}`
+        : isCollection
+          ? `${category} Rugs | ${pageBrand}`
+          : isContentPage && currentContentPage
+            ? `${currentContentPage.title || currentContentPage.key} | ${pageBrand}`
+            : isContact ? `Contact Us | ${pageBrand}`
+              : isCart ? `Shopping Bag | ${pageBrand}`
+                : isCheckout ? `Checkout | ${pageBrand}`
+                  : `${pageBrand} — Rugs for the way you live`;
+    const pageDescription = isProduct && detailProduct?.description
+      ? detailProduct.description
+      : isCollection
+        ? routeCategory?.description || `Explore ${category} rugs at ${pageBrand}. Discover considered designs and inviting textures for every room.`
+        : isContentPage && currentContentPage
+          ? currentContentPage.subtitle || currentContentPage.body?.replace(/<[^>]*>/g, '').slice(0, 155)
+          : isContact ? `Get in touch with ${pageBrand} for help choosing rugs, orders or general enquiries.`
+            : `Thoughtfully designed rugs for modern homes, with inviting textures and considered designs.`;
+    document.title = pageTitle;
+    const setMeta = (selector, content, attribute = 'content') => {
+      const element = document.head.querySelector(selector);
+      if (element) element.setAttribute(attribute, content || '');
+    };
+    setMeta('meta[name="description"]', pageDescription);
+    setMeta('meta[property="og:title"]', pageTitle);
+    setMeta('meta[property="og:description"]', pageDescription);
+    setMeta('meta[name="twitter:title"]', pageTitle);
+    setMeta('meta[name="twitter:description"]', pageDescription);
+    setMeta('meta[name="robots"]', isCart || isCheckout || isProductReviewsPage ? 'noindex, follow' : 'index, follow');
+  }, [brand, category, currentContentPage, detailProduct, isCart, isCheckout, isCollection, isContact, isContentPage, isProduct, isProductReviewsPage, routeCategory]);
   const count = bag.reduce((n, p) => n + p.quantity, 0);
   const selectedVariant = selected?.sizes?.find(item => item.label === size) || featuredSize(selected);
   const selectedPriceProduct = selected ? { ...selected, price: selectedVariant?.price ?? selected.price, discountPercentage: selectedVariant?.discountPercentage ?? selected.discountPercentage } : null;
