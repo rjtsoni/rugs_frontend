@@ -27,7 +27,7 @@ export default function ProductCard({
     </div>
     <div className="premium-product-info">
       <div className="premium-product-kicker"><span>{t(p.category || p.type || 'Handcrafted rug')}</span><div className="swatches">{t((p.palette || []).slice(0, 4).map((color, index) => <span key={`${color}-${index}`} style={{ background: color }} />))}</div></div>
-      <div className="product-details"><button onClick={() => onQuickView(p)} title={p.name}>{t(p.name)}</button><span className="product-prices">{discount > 0 && <del>₹{t(Number(priceProduct.price || 0).toLocaleString('en-IN'))}</del>}<b>₹{t(salePrice.toLocaleString('en-IN'))}</b></span>{discount > 0 && <span className="product-card-discount">{discount}% OFF</span>}</div>
+      <div className="product-details"><button onClick={() => onQuickView(p)} title={p.name}>{t(p.name)}</button><span className="product-prices">{discount > 0 && <del>${t(Number(priceProduct.price || 0).toLocaleString('en-US'))}</del>}<b>${t(salePrice.toLocaleString('en-US'))}</b></span>{discount > 0 && <span className="product-card-discount">{discount}% OFF</span>}</div>
       {p.tag && <span className="premium-product-tag-below-price">{t(p.tag)}</span>}
       {size?.label && <span className="premium-product-size-label">{t(size.label)}</span>}
       {size?.label && <p className="premium-product-size">Price shown for {t(size.label)}</p>}

@@ -1,0 +1,14 @@
+.rich-content > :first-child { margin-top: 0; }
+.rich-content > :last-child { margin-bottom: 0; }
+.rich-content p { margin: 0 0 .8em; }
+.rich-content ul, .rich-content ol { margin: .5em 0 1em; padding-left: 1.5em; }
+.rich-content li { margin: .25em 0; }
+.rich-content h2, .rich-content h3 { margin: 1em 0 .45em; }
+.rich-content blockquote { margin: .8em 0; padding-left: 1em; border-left: 3px solid #8a9076; }
+.rich-content a { text-decoration: underline; }
+
+.product-benefit-copy { display:grid; gap:3px; min-width:0; color:#354335; }
+.product-benefit-copy b { font-size:12px; font-weight:600; }
+.product-benefit-rich { font-size:10px; line-height:1.4; color:#817d70; }
+.contact-info-copy { font-size:12px; line-height:1.6; color:inherit; }
+.contact-info-copy b { font-size:14px; }

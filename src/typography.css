@@ -1,0 +1,284 @@
+:root {
+  --type-caption: 12px;
+  --type-body: 16px;
+  --type-lead: 18px;
+  --type-title-small: 20px;
+  --type-title-medium: clamp(32px, 4.5vw, 72px);
+  --type-title-large: clamp(42px, 5.4vw, 72px);
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --serif-reference: Georgia, 'Times New Roman', serif;
+}
+
+body,
+body button,
+body input,
+body select,
+body textarea,
+body :not(svg):not(path) {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+body {
+  font-size: var(--type-body);
+  font-weight: var(--weight-regular);
+  line-height: 1.5;
+}
+
+p,
+li,
+.rich-content p {
+  font-size: var(--type-body) !important;
+  font-weight: var(--weight-regular) !important;
+  line-height: 1.5 !important;
+}
+
+small {
+  font-size: var(--type-caption) !important;
+  font-weight: var(--weight-regular);
+  line-height: 1.5;
+}
+
+.eyebrow {
+  font-size: 11px !important;
+  font-weight: var(--weight-semibold) !important;
+  letter-spacing: .12em;
+  line-height: 1.5;
+}
+
+nav {
+  font-size: 14px !important;
+  font-weight: var(--weight-semibold) !important;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 14px !important;
+  font-weight: var(--weight-regular);
+}
+
+button:not(.product-open):not(.icon-button),
+.button,
+.text-link {
+  font-weight: var(--weight-semibold) !important;
+}
+
+strong,
+b {
+  font-weight: var(--weight-semibold) !important;
+}
+
+h1,
+.hero h1,
+.store-page-heading h1,
+.collection-intro-copy h1,
+.detail-copy h1 {
+  font-family: var(--serif-reference) !important;
+  font-size: var(--type-title-large) !important;
+  font-weight: var(--weight-regular) !important;
+  line-height: 1.1 !important;
+  letter-spacing: -.035em;
+}
+
+h2,
+.store-page-heading h2,
+.related-products-heading h2,
+.product-craft-content h2 {
+  font-family: var(--serif-reference) !important;
+  font-size: var(--type-title-medium) !important;
+  font-weight: var(--weight-regular) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -.025em;
+}
+
+h3 {
+  font-size: var(--type-title-small) !important;
+  font-weight: var(--weight-semibold) !important;
+  line-height: 1.35 !important;
+}
+
+h4 {
+  font-size: 14px !important;
+  font-weight: var(--weight-semibold) !important;
+  line-height: 1.35 !important;
+}
+
+.logo,
+.logo span {
+  font-family: var(--serif) !important;
+}
+
+.hero-content p,
+.collection-intro-copy>p,
+.product-craft-content>.craft-story-paragraph {
+  font-size: var(--type-lead) !important;
+  line-height: 1.6 !important;
+}
+
+.product-grid .product-details,
+.collection-tab-bottom,
+.subcategory-card-copy,
+.product-benefit-copy,
+.store-breadcrumbs {
+  font-size: var(--type-caption);
+}
+
+.button,
+.text-link,
+.collection-category-picker button,
+.collection-search input,
+.detail-copy select,
+.modal-size-dropdown summary {
+  font-size: 14px !important;
+}
+
+/* Keep the home page's editorial type compact, like the reference storefront. */
+.hero h1 {
+  font-size: clamp(40px, 4.2vw, 56px) !important;
+  line-height: 1.08 !important;
+  font-weight: var(--weight-regular) !important;
+}
+
+.intro h2,
+.section-heading h2,
+.story-copy h2,
+.size-section h2,
+.craft-banner h2,
+.newsletter h2 {
+  font-size: clamp(28px, 2.9vw, 40px) !important;
+  line-height: 1.18 !important;
+  font-weight: var(--weight-regular) !important;
+  letter-spacing: -.025em;
+}
+
+.hero-content p,
+.intro p,
+.rooms-rich-description p,
+.story-copy p,
+.size-section p,
+.craft-banner p,
+.newsletter p,
+.collection-closing-copy p {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  font-weight: var(--weight-regular) !important;
+}
+
+.benefits>div,
+.benefits small {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+
+.product-details button,
+.collection-tab strong,
+.room-label {
+  font-weight: var(--weight-medium) !important;
+}
+
+.product-details button {
+  font-size: 14px !important;
+}
+
+.product-details>span,
+.product-meta,
+.collection-tab-description,
+.collection-closing-copy {
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+}
+
+@media (min-width: 801px) {
+  .hero {
+    height: 620px !important;
+    min-height: 0 !important;
+  }
+
+  .hero-content {
+    padding-top: 60px !important;
+  }
+
+  .hero-visual {
+    top: 30px !important;
+    right: 5% !important;
+    bottom: 70px !important;
+    width: 38% !important;
+  }
+
+  .hero-orbit {
+    width: 110px !important;
+    height: 110px !important;
+    bottom: 75px !important;
+  }
+
+  .collection-editorial-grid,
+  .featured-category,
+  .collection-side-grid {
+    min-height: 440px !important;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 800px) {
+  .featured-category {
+    min-height: 350px !important;
+  }
+
+  .collection-side-grid {
+    grid-auto-rows: minmax(180px, auto) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --type-body: 14px;
+    --type-lead: 16px;
+    --type-title-small: 18px;
+    --type-title-medium: clamp(28px, 7vw, 40px);
+    --type-title-large: clamp(38px, 10vw, 52px);
+  }
+
+  small {
+    font-size: 11px !important;
+  }
+
+  .intro h2,
+  .section-heading h2,
+  .story-copy h2,
+  .size-section h2,
+  .craft-banner h2,
+  .newsletter h2 {
+    font-size: clamp(27px, 6.5vw, 34px) !important;
+  }
+
+  .hero-content p,
+  .intro p,
+  .rooms-rich-description p,
+  .story-copy p,
+  .size-section p,
+  .craft-banner p,
+  .newsletter p {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  .hero {
+    height: auto !important;
+  }
+
+  .featured-category {
+    min-height: 320px !important;
+  }
+
+  .collection-editorial-grid {
+    min-height: 0 !important;
+  }
+
+  .collection-side-grid {
+    min-height: 0 !important;
+    grid-auto-rows: minmax(160px, auto) !important;
+  }
+}

@@ -49,7 +49,8 @@
   .hero-content { order: 0; }
   .hero-visual { order: 1; }
   .reference-brand { min-width: 0; }
-  .reference-brand img { max-width: min(122px, 32vw); }
+  .reference-brand img { max-width: min(180px, 40vw); max-height: 72px; }
+  .reference-brand>span { max-width: 180px; font-size: 8px; font-weight: 800; letter-spacing: 1px; white-space: normal; overflow-wrap: anywhere; }
   .reference-utility-actions { min-width: 0; }
   .reference-utility-row > * { min-width: 0; }
   .reference-offer-inline .offer-message { max-width: 36vw; }

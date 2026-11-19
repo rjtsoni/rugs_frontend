@@ -814,3 +814,162 @@
 .reference-brand-skeleton,.reference-tagline-skeleton,.reference-shipping-skeleton,.reference-offer-skeleton,.reference-category-skeleton i{display:block;background:linear-gradient(100deg,#e8e6de 25%,#f5f3ed 45%,#e8e6de 65%);background-size:200% 100%;animation:header-placeholder-shimmer 1.4s ease-in-out infinite;border-radius:4px}
 .reference-brand-skeleton{width:190px;height:48px}.reference-tagline-skeleton{width:135px;height:8px;margin-top:6px}.reference-company-name .reference-shipping-skeleton{width:min(220px,100%);height:11px}.reference-offer-inline .reference-offer-skeleton{width:190px;height:11px}.reference-category-skeleton{gap:clamp(20px,4.5vw,82px)}.reference-category-skeleton i{width:72px;height:10px}.reference-category-skeleton i:nth-child(2){width:94px}.reference-category-skeleton i:nth-child(3){width:65px}.reference-category-skeleton i:nth-child(4){width:55px}
 @media(max-width:800px){.reference-brand-skeleton{width:125px;height:36px}.reference-tagline-skeleton{width:94px;height:7px}.reference-company-name .reference-shipping-skeleton{width:100%;height:9px}.reference-offer-inline .reference-offer-skeleton{width:82px;height:9px}.reference-category-skeleton{gap:23px}.reference-category-skeleton i{flex:0 0 55px}}
+.reference-wishlist-box{display:flex;align-items:center;min-width:0;padding:5px 9px;border:1px solid #d9c7b2;border-radius:5px;background:#fbf8f2}
+.reference-wishlist-box>button{flex:none}
+.reference-boutique-stores{display:flex;align-items:center;gap:clamp(10px,1.15vw,20px);min-width:0;max-width:100%;padding:0;border:0;border-radius:0;background:transparent;color:#583d24;font:600 12px/1.2 var(--sans);white-space:nowrap}
+.reference-boutique-stores strong{font-size:12px;font-weight:700}
+.reference-boutique-stores a{color:inherit;text-decoration:none;transition:color .2s}
+.reference-boutique-stores a:hover{color:#9d6545}
+.reference-company-name{overflow:visible;white-space:normal;color:#583d24;font:600 12px/1.2 var(--sans);letter-spacing:0}
+
+/* Compact storefront header typography and row rhythm. */
+.reference-top-row {
+    min-height: 98px;
+    height: auto;
+    padding: 8px 3.5%;
+    grid-template-columns: minmax(135px, 185px) minmax(220px, 1fr) auto minmax(165px, 205px);
+    gap: clamp(12px, 1.6vw, 25px);
+}
+
+.reference-brand img {
+    max-width: 172px;
+    max-height: 58px;
+}
+
+.reference-brand>span {
+    max-width: 100%;
+    margin-top: 4px;
+    font-size: 8px !important;
+    line-height: 1.25;
+    letter-spacing: .1em;
+}
+
+.reference-search {
+    height: 42px;
+    max-width: 660px;
+    padding: 0 15px 0 19px;
+    font-size: 12px !important;
+}
+
+.reference-search svg {
+    width: 19px;
+    height: 19px;
+}
+
+.reference-page-links {
+    gap: clamp(12px, 1.3vw, 20px);
+}
+
+.reference-page-links button,
+.reference-page-links a {
+    font-size: 12px !important;
+    font-weight: 500;
+}
+
+.compact-language-selector {
+    min-width: 160px;
+    height: 35px;
+}
+
+.compact-language-selector>span:first-child {
+    font-size: 12px !important;
+}
+
+.compact-language-selector select {
+    font-size: 11px !important;
+}
+
+.reference-utility-row {
+    min-height: 41px;
+    padding: 4px 3.5%;
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 1fr) minmax(0, 1fr);
+    gap: 16px;
+}
+
+.reference-boutique-stores,
+.reference-boutique-stores strong {
+    font-size: 10px !important;
+}
+
+.reference-offer-inline {
+    font-size: 10px;
+}
+
+.reference-utility-actions {
+    gap: clamp(12px, 1.5vw, 22px);
+}
+
+.reference-utility-actions button {
+    gap: 5px;
+    font-size: 11px !important;
+    font-weight: 500;
+}
+
+.reference-utility-actions button svg {
+    width: 17px;
+    height: 17px;
+}
+
+.reference-category-row {
+    min-height: 42px;
+    gap: clamp(16px, 2.7vw, 42px);
+}
+
+.reference-category-row>button {
+    padding: 11px 0 !important;
+    font-size: 12px !important;
+    font-weight: 550;
+}
+
+@media(max-width:1150px) {
+    .reference-top-row {
+        grid-template-columns: minmax(135px, 180px) minmax(180px, 1fr) auto minmax(145px, 190px);
+        gap: 16px;
+    }
+
+    .reference-page-links button,
+    .reference-page-links a {
+        font-size: 12px !important;
+    }
+
+    .reference-utility-row {
+        grid-template-columns: minmax(0, 1fr) minmax(150px, .8fr) minmax(0, 1fr);
+        gap: 10px;
+    }
+}
+
+@media(max-width:800px) {
+    .reference-top-row {
+        min-height: 75px;
+        padding: 8px 5%;
+        grid-template-columns: minmax(105px, 150px) minmax(0, 1fr) auto;
+        gap: 12px;
+    }
+
+    .reference-brand img {
+        max-width: 145px;
+        max-height: 48px;
+    }
+
+    .reference-brand>span {
+        font-size: 8px !important;
+    }
+
+    .reference-utility-row {
+        min-height: 40px;
+        padding: 5px 5%;
+    }
+
+    .reference-utility-actions button {
+        font-size: 11px !important;
+    }
+
+    .reference-category-row {
+        min-height: 43px;
+        gap: 22px;
+    }
+
+    .reference-category-row>button {
+        font-size: 12px !important;
+    }
+}
