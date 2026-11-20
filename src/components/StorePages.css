@@ -1903,6 +1903,29 @@
     box-sizing: border-box
 }
 
+/* Keep the shared site-wide heading scale from making the four contact cards
+   wider than their grid columns. */
+.contact-page .contact-quick-card h2 {
+    max-width: 100%;
+    margin: 11px 0 4px;
+    font: 600 16px/1.2 'DM Sans', sans-serif !important;
+    letter-spacing: -.03em;
+    overflow-wrap: anywhere;
+    word-break: normal
+}
+
+@media (max-width: 650px) {
+    .contact-page .contact-quick-card h2 {
+        font-size: 14px
+    }
+}
+
+.contact-page .contact-other h2,
+.contact-page .contact-form-card h2 {
+    font-size: clamp(26px, 2.2vw, 34px) !important;
+    line-height: 1.2
+}
+
 .contact-hero {
     min-height: 0;
     grid-template-columns: minmax(0, 1fr) clamp(150px, 19vw, 240px);
